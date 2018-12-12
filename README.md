@@ -7,6 +7,7 @@
 * Initialise database
 
 ## Database initialisation
+ * run rake db:structure:load
  * run rake db:migrate (This will migrate all database models to your mysql)
 
 Things you may want to cover:
