@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_12_12_075032) do
-=======
 ActiveRecord::Schema.define(version: 2018_12_12_162316) do
->>>>>>> 153819342b20a2eb14323152742371c9f7a9d963
 
   create_table "currencies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "currency_name"
@@ -23,19 +19,6 @@ ActiveRecord::Schema.define(version: 2018_12_12_162316) do
   end
 
   create_table "markets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-<<<<<<< HEAD
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "market_id"
-    t.float "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-=======
     t.bigint "base_currency_id"
     t.bigint "quoted_currency_id"
     t.datetime "created_at", null: false
@@ -55,5 +38,4 @@ ActiveRecord::Schema.define(version: 2018_12_12_162316) do
   add_foreign_key "markets", "currencies", column: "base_currency_id"
   add_foreign_key "markets", "currencies", column: "quoted_currency_id"
   add_foreign_key "rates", "markets"
->>>>>>> 153819342b20a2eb14323152742371c9f7a9d963
 end
