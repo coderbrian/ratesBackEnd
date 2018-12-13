@@ -7,10 +7,10 @@
 * Initialise database
 
 ## Database initialisation
- * run rake db:structure:load
+ * run rake db:create (This creates the development and testing databases)
+ * run rake db:seed (This will feed all the database with preconfigured data)
  * run rake db:migrate (This will migrate all database models to your mysql)
 
-Things you may want to cover:
 
 * Ruby version: 2.5.3 
 * System dependencies: mysql server , docker 
