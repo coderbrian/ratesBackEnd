@@ -39,7 +39,7 @@
 				</tr>
 			</tbody>
 			</table>
-			 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			 <p class="card-text"><small class="text-muted">Updated At :<%= Rate.order(:updated_at).last.updated_at %></small></p>
 		 </div>
 		 </div>
 		</div>
