@@ -1,5 +1,13 @@
 class CurrenciesController < ApplicationController
   def index
-  	@x = Currency.all.order("created_at DESC")
+    @posts = Currency.all.order("created_at DESC")
+
+    render json: @posts
+  end
+
+  def show 
+    @posts = Currency.find(params[:id])
+
+    render json: @posts
   end
 end
