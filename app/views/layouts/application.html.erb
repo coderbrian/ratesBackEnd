@@ -5,11 +5,54 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+  
+    <link href="style.css" rel="stylesheet">
+		<link href="bootstrap.min.css" rel="stylesheet">
+	
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+      <!-- Static navbar -->
+		  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+			  <div class="container">
+				 <a class="navbar-brand" href="index.html">Rates</a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+				  <ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+					  <a class="nav-link" href="calculate#index">Rates</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="faq">FAQs</a>
+					</li>
+				  </ul>
+				</div>
+			  </div>
+			</nav>
+
     <%= yield %>
+
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+           <ul class="list-inline mb-2">
+              <li class="list-inline-item">
+                <a href="calculate#index">Rates</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="faq">FAQ</a>
+              </li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Rates Golix Project.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

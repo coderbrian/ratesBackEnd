@@ -1,0 +1,84 @@
+
+		  <!-- Main component for a primary marketing message or call to action -->
+		  <div class="container my-3">
+		  <nav aria-label="breadcrumb">
+			  <ol class="breadcrumb">
+				<li class="breadcrumb-item active" aria-current="page">Rates</li>
+			  </ol>
+			</nav>
+
+			<div class="row">
+			 <div class="col-lg-6">
+				<div class="card">
+				<div class ="card-body">
+			<h2 class="card-title">Rates</h2>
+			<br>
+			<table class="table table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th class="text-left">Currency</th>
+					<th class="text-left">Rate</th>
+				</tr>
+			</thead>
+			<tbody class="table">
+				<tr>
+					<td class="text-left">USD/RTGS</td>
+					<td class="text-left"><%=Rate.first.price%>%</td>
+				</tr>
+				<tr>
+					<td class="text-left">USD/Bond</td>
+					<td class="text-left">190%</td>
+				</tr>
+				<tr>
+					<td class="text-left">Bond/RTGS</td>
+					<td class="text-left">20%</td>
+				</tr>
+				<tr>
+					<td class="text-left">OMIR/RTGS</td>
+					<td class="text-left">433%</td>
+				</tr>
+			</tbody>
+			</table>
+			 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		 </div>
+		 </div>
+		</div>
+			 
+			 <div class="col-lg-6">
+					<div class="card ">
+					<div class="card-header text-center">Currency value Calculator</div>
+					<div class="card-body">
+								
+					<form>
+					<div class="form-group">
+						<div class="inputWrapper">
+							<label for="exampleFormControlInput1">Currency</label>
+							<select class="form-control" id="exampleFormControlInput1">
+								<option value="usd_bnd">USD/Bond</option>
+								<option value="usd_rtgs">USD/RTGS</option>
+								<option value="bond_rtgs">BOND/RTGS</option>
+								<option value="omir_rtgs">OMIR/RTGS</option>
+								<option value="none" selected>--Please choose an option--</option>
+							</select>
+							
+							<label for="currencyFrom">Amount</label>
+							<input type="number" name="currencyFrom"class="form-control is-valid" id="exampleFormControlInput1" />
+						</div><!-- .inputWrapper -->
+						<div class="inputWrapper">
+							<label for="currencyTo">Value </label>
+							<input type="number" name="currencyTo" class="form-control" id="exampleFormControlInput1" disabled />
+						</div><!-- .inputWrapper -->
+						<br>
+						<button class="btn btn-outline-success">Calculate</button>
+						<hr>
+						<ul>
+							<li>Select the currency you want to calculate</li>
+							<li>Enter the amount you have and Click calculate to see the value </li>
+						</ul>
+					</div><!-- .conversionWrapper -->
+				</form>
+				</div>
+				</div>
+			 </div>
+			</div>
+		  </div>
