@@ -1,5 +1,34 @@
 # README
 
+### Docker 
+
+prerequisite 
+
+docker 
+
+docker-compose
+
+#### Steps :
+
+```
+- docker build -t ratesbackEndBank .
+- docker run -it --rm ratesbackEndBank bundle exec rake test
+- docker run -itP ratesbackEndBank
+- docker run -itP -v $(pwd):/app ratesBackEnd
+- docker-compose build 
+- docker-compose --rm app env
+- docker-compose build
+- docker-compose up
+- docker-compose run app rake db:create
+- docker-compose run app rake db:migrate
+- docker-compose run app rake db:seed
+
+
+
+```
+
+
+
 ## Main Steps:
 * run git clone _remote_URL_
 * cd into local cloned repo
