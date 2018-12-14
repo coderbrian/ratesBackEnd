@@ -3,7 +3,7 @@
 		  <div class="container my-3">
 		  <nav aria-label="breadcrumb">
 			  <ol class="breadcrumb">
-				<li class="breadcrumb-item active" aria-current="page">Rates</li>
+				<li class="breadcrumb-item active" aria-current="page">dashboard</li>
 			  </ol>
 			</nav>
 
@@ -11,7 +11,9 @@
 			 <div class="col-lg-6">
 				<div class="card">
 				<div class ="card-body">
-			<h2 class="card-title">Rates</h2>
+				<center>
+			<h2 class="card-title">Market Insights</h2>
+			</center>
 			<br>
 			<table class="table table-striped">
 			<thead class="thead-dark">
@@ -22,19 +24,19 @@
 			</thead>
 			<tbody class="table">
 				<tr>
-					<td class="text-left">USD/RTGS</td>
+					<td class="text-left"><%=Market.first.base_currency.currency_name + "/" + Market.first.quoted_currency.currency_name %></td>
 					<td class="text-left"><%=Rate.first.price%>%</td>
 				</tr>
 				<tr>
-					<td class="text-left">USD/Bond</td>
+					<td class="text-left"><%=Market.second.base_currency.currency_name + "/" + Market.second.quoted_currency.currency_name %></td>
 					<td class="text-left"><%=Rate.second.price%>%</td>
 				</tr>
 				<tr>
-					<td class="text-left">Bond/RTGS</td>
+					<td class="text-left"><%=Market.third.base_currency.currency_name + "/" + Market.third.quoted_currency.currency_name %></td>
 					<td class="text-left"><%=Rate.third.price%>%</td>
 				</tr>
 				<tr>
-					<td class="text-left">OMIR/RTGS</td>
+					<td class="text-left"><%=Market.fourth.base_currency.currency_name + "/" + Market.fourth.quoted_currency.currency_name %></td>
 					<td class="text-left"><%=Rate.fourth.price%>%</td>
 				</tr>
 			</tbody>
@@ -54,19 +56,22 @@
 						<div class="inputWrapper">
 							<label for="exampleFormControlInput1">Currency</label>
 							<select class="form-control" id="exampleFormControlInput1">
-								<option value="usd_bnd">USD/Bond</option>
-								<option value="usd_rtgs">USD/RTGS</option>
-								<option value="bond_rtgs">BOND/RTGS</option>
-								<option value="omir_rtgs">OMIR/RTGS</option>
+								<option value="usd_bnd"><%=Market.first.base_currency.currency_name + "/" + Market.first.quoted_currency.currency_name %></option>
+								<option value="usd_rtgs"><%=Market.second.base_currency.currency_name + "/" + Market.second.quoted_currency.currency_name %></option>
+								<option value="bond_rtgs"><%=Market.third.base_currency.currency_name + "/" + Market.third.quoted_currency.currency_name %></option>
+								<option value="omir_rtgs"><%=Market.fourth.base_currency.currency_name + "/" + Market.fourth.quoted_currency.currency_name %></option>
 								<option value="none" selected>--Please choose an option--</option>
 							</select>
 							
 							<label for="currencyFrom">Amount</label>
-							<input type="number" name="currencyFrom"class="form-control is-valid" id="exampleFormControlInput1" />
+							<input type="number" name="currencyFrom"class="form-control is-valid" id="Input1" />
 						</div><!-- .inputWrapper -->
 						<div class="inputWrapper">
+							<label for="currencyTo">Rate</label>
+							<input type="number" name="currencyTo" class="form-control" id="Input2" />
 							<label for="currencyTo">Value </label>
-							<input type="number" name="currencyTo" class="form-control" id="exampleFormControlInput1" disabled />
+							<input type="number" name="currencyTo" class="form-control" id="Input2" disabled />
+						
 						</div><!-- .inputWrapper -->
 						<br>
 						<button class="btn btn-outline-success">Calculate</button>
