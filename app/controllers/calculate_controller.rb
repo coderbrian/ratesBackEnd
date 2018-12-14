@@ -3,5 +3,6 @@ class CalculateController < ApplicationController
   end
 
   def faq
+  
   end
 end
